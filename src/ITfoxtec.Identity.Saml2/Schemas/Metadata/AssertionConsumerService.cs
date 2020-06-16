@@ -27,6 +27,10 @@ namespace ITfoxtec.Identity.Saml2.Schemas.Metadata
         /// </summary>
         public Uri Location { get; set; }
 
+        public int Index { get; set; }
+
+        public bool IsDefault { get; set; }
+
         public XElement ToXElement(int index)
         {
             var envelope = new XElement(Saml2MetadataConstants.MetadataNamespaceX + elementName);
