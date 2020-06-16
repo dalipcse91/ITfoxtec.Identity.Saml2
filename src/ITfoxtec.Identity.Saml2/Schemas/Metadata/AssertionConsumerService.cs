@@ -25,9 +25,7 @@ namespace ITfoxtec.Identity.Saml2.Schemas.Metadata
         /// A required URI attribute that specifies the location of the endpoint. The allowable syntax of this
         /// URI depends on the protocol binding.
         /// </summary>
-        public Uri Location { get; set; }
-
-        public int Index { get; set; }
+        public Uri Location { get; set; }       
 
         public bool IsDefault { get; set; }
 
@@ -45,7 +43,7 @@ namespace ITfoxtec.Identity.Saml2.Schemas.Metadata
             yield return new XAttribute(Saml2MetadataConstants.Message.Binding, Binding.OriginalString);
             yield return new XAttribute(Saml2MetadataConstants.Message.Location, Location.OriginalString);
             yield return new XAttribute(Saml2MetadataConstants.Message.Index, index);
-            yield return new XAttribute(Saml2MetadataConstants.Message.IsDefault, true);
+            yield return new XAttribute(Saml2MetadataConstants.Message.IsDefault, IsDefault);
         }
     }
 }
